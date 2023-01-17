@@ -14,10 +14,10 @@ void Z_algo(string txt, string pat) {
 	vector<int> z(n), vec;
 	int l = 1, r = 1;
 	for (int i = 1; i < n; i++) {
-		z[i] = max(0, min(r - i, z[i - l]));
+		z[i] = max(0, min(r - i + 1, z[i - l]));
 		while (s[z[i]] == s[i + z[i]])
 			z[i]++;
-		if (i + z[i] > r) {
+		if (i + z[i] - 1 > r) {
 			l = i;
 			r = i + z[i] - 1;
 		}
