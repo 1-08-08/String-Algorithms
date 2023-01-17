@@ -18,7 +18,7 @@ void Z_algo(string txt, string pat) {
 		while (s[z[i]] == s[i + z[i]])
 			z[i]++;
 		if (i + z[i] > r) {
-			l = i - z[i] + 1;
+			l = i;
 			r = i + z[i] - 1;
 		}
 		if (z[i] == m)
